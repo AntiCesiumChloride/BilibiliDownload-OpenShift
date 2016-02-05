@@ -116,6 +116,7 @@ if( typeof( params.page )!="undefined" ) {
 	var end = "index_" + params.page + ".html";
 }
 window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
+history.go(-1);
 </script>
 HTML;
 	return [
@@ -139,11 +140,6 @@ if( $return['success'] ) {
 	if( $_GET['type'] == 'mobile' ) {
 		header('HTTP/1.1 302 Moved Temporarily');
 		header('Location: '.$return['url']);
-		echo <<<HTML
-<script>
-history.go(-2);
-</script>
-HTML;
 	} else {
 		header('HTTP/1.1 302 Moved Temporarily');
 		header('Location: '.$return['url']);
