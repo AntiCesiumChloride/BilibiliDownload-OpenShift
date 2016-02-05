@@ -1,7 +1,6 @@
 <?php
 /**
  * @author https://ZE3kr.com
- * Usage: To get a download URL: $url = GetBilibiliUrl('http://www.bilibili.com/mobile/video/av1234567/index_2.html');
 **/
 
 define( 'APPKEY', '85eb6835b0a1034e', true );
