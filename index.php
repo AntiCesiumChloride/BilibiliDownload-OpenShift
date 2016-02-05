@@ -141,7 +141,7 @@ if( $return['success'] ) {
 		header('Location: '.$return['url']);
 		echo <<<HTML
 <script>
-window.location="http://www.bilibili.com/mobile/video/av{$return['aid']}.html#page={$return['pid']}";
+history.go(-2);
 </script>
 HTML;
 	} else {
