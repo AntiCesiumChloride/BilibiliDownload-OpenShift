@@ -107,7 +107,6 @@ function GetBilibiliUrl($url) {
 		<title>BilibiliDownload</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" href="main.css">
-		<meta http-equiv="refresh" content="5;url=http://www.bilibili.com/mobile/video/av{$return['aid']}.html#page={$return['pid']}">
 	</head>
 	<body>
 		<h2>已经开始下载，5 秒钟后自动返回之前的页面</h2>
@@ -128,7 +127,7 @@ function GetBilibiliUrl($url) {
 			var end = "index_" + params.page + ".html";
 		}
 		window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
-		setTimeout(window.location='http://www.bilibili.com/mobile/video/av{$return['aid']}.html#page={$return['pid']}',5); 
+		setTimeout(history.go(-1),5000); 
 		</script>
 	</body>
 </html>
