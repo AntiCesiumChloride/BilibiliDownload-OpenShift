@@ -139,7 +139,9 @@ HTML;
 		header('Location: '.$return['url']);
 	}
 } elseif($return['code'] == 3) {
+	header('HTTP/1.1 200 OK');
 } elseif($return['code'] == 2) {
+	header('HTTP/1.1 200 OK');
 	echo <<<HTML
 <!DOCTYPE html>
 <html>
@@ -191,7 +193,7 @@ HTML;
 </html>
 HTML;
 } else {
-		echo <<<HTML
+	echo <<<HTML
 <script>
 alert("Parameter is missing or invalid");
 history.go(-1);
