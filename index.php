@@ -189,7 +189,7 @@ HTML;
 			<form id="downform" name="downform" action="/">
 				<input type="text" class="urlinput" name="url" id="domain_input" placeholder="http://www.bilibili.com/video/av12450/" autofocus autocomplete="off" onchange="short()">
 			</div>
-			<h2 class="note">Ver. 1.0 大更新！页面由：<a target="_blank" href="https://weibo.com/pa001024">pa001024</a>设计<br /><br />书签支持: 拖动<a title="拖动我到书签栏" href="javascript:void (function(a,d){d=document.createElement('script');d.src=a;document.body.appendChild(d)})('http://www.bilibili.download/bookmark.js')">❤下载</a>到书签栏 书签点击更方便, 快来使用吧~</h2>
+			<h2 class="note">书签支持: 拖动<a title="拖动我到书签栏" href="javascript:void (function(a,d){d=document.createElement('script');d.src=a;document.body.appendChild(d)})('http://www.bilibili.download/bookmark.js')">❤下载</a>到书签栏 书签点击更方便, 快来使用吧~</h2>
 		</div>
 		<footer id="footer">
 			Copyleft 2016, <a target="_blank" href="http://www.superfashi.com">SuperFashi</a><br>
