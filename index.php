@@ -42,7 +42,7 @@ function urlfetch($url) {
 
 function GetUrl($aid, $pid) {
 	$url_get_media = 'http://interface.bilibili.com/playurl?';
-	$cid = apc_fetch('cid-'$aid.$pid);
+	$cid = apc_fetch('cid-'.$aid.$pid);
 	if(!$cid){
 		$cid_args = [
 			'type' => 'json',
@@ -52,9 +52,9 @@ function GetUrl($aid, $pid) {
 		$resp_cid = urlfetch('http://api.bilibili.com/view?'.GetSign($cid_args,APPKEY,APPSEC));
 		$resp_cid = json_decode($resp_cid,true);
 		$cid = $resp_cid['cid'];
-		apc_store( 'cid-'$aid.$pid, $cid );
+		apc_store( 'cid-'.$aid.$pid, $cid );
 	}
-	$url = apc_fetch('url-'$cid);
+	$url = apc_fetch('url-'.$cid);
 	if($url){
 		$resp_media['durl'][0]['url'] = $url;
 	} else {
@@ -67,7 +67,7 @@ function GetUrl($aid, $pid) {
 		$appkeyf = [APPKEY,APPKEY2];
 		$resp_media = urlfetch($url_get_media.GetSign($media_args,$appkeyf[rand(0,1)]));
 		$resp_media = json_decode($resp_media,true);
-		apc_store( 'url-'$cid, $resp_media['durl'][0]['url'], 10800 );
+		apc_store( 'url-'.$cid, $resp_media['durl'][0]['url'], 10800 );
 	}
 	if(isset($resp_media['durl'][0]['url'])) {
 		return [
