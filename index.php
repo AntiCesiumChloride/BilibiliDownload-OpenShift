@@ -128,7 +128,6 @@ function GetBilibiliUrl($url) {
 			var end = "index_" + params.page + ".html";
 		}
 		window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
-		history.go(-1);
 		</script>
 	</body>
 </html>
