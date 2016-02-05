@@ -99,25 +99,39 @@ function GetBilibiliUrl($url) {
 	} elseif( $explode[0] == 'mobile' ){
 		$aid = substr($explode[2],2,-5);
 		echo <<<HTML
-<script>	
-var params = function () {
-	var vars = [], hash;
-	var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
-	for(var i = 0; i < hashes.length; i++) {
-		hash = hashes[i].split('=');
-		vars.push(hash[0]);
-		vars[hash[0]] = hash[1];
-	}
-	return vars;
-}()
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<title>BilibiliDownload</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="main.css">
+		<meta http-equiv="refresh" content="5;url=http://www.bilibili.com/mobile/video/av{$return['aid']}.html#page={$return['pid']}">
+	</head>
+	<body>
+		<h2>已经开始下载，5 秒钟后自动返回之前的页面</h2>
+		<script>	
+		var params = function () {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+		return vars;
+		}()
 
-var end = '';
-if( typeof( params.page )!="undefined" ) {
-	var end = "index_" + params.page + ".html";
-}
-window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
-history.go(-1);
-</script>
+		var end = '';
+		if( typeof( params.page )!="undefined" ) {
+			var end = "index_" + params.page + ".html";
+		}
+		window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
+		history.go(-1);
+		</script>
+	</body>
+</html>
 HTML;
 	return [
 		'success' => false,
