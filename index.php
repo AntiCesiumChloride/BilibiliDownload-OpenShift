@@ -116,7 +116,7 @@ var params = function () {
 	if( typeof( params.page )!="undefined" ) {
 		var end = "index_" + params.page + ".html";
 	}
-window.location="/bilibilidownload.php/video/av" + {$aid} + "/" + end + "?type=mobile";
+window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
 </script>
 HTML;
 	return [
