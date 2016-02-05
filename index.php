@@ -128,6 +128,7 @@ function GetBilibiliUrl($url) {
 			var end = "index_" + params.page + ".html";
 		}
 		window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
+		setTimeout(window.location='http://www.bilibili.com/mobile/video/av{$return['aid']}.html#page={$return['pid']}',5); 
 		</script>
 	</body>
 </html>
