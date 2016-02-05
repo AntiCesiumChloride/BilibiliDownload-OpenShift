@@ -109,12 +109,12 @@ var params = function () {
 		vars[hash[0]] = hash[1];
 	}
 	return vars;
-	}()
+}()
 
-	var end = '';
-	if( typeof( params.page )!="undefined" ) {
-		var end = "index_" + params.page + ".html";
-	}
+var end = '';
+if( typeof( params.page )!="undefined" ) {
+	var end = "index_" + params.page + ".html";
+}
 window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
 </script>
 HTML;
@@ -137,15 +137,21 @@ if(isset($_GET['url'])){
 $return = GetBilibiliUrl($url);
 if( $return['success'] ) {
 	if( $_GET['type'] == 'mobile' ) {
+		header('HTTP/1.1 302 Moved Temporarily');
+		header('Location: '.$return['url']);
 		echo <<<HTML
 <script>
-window.location="{$return['url']}";
 window.location="http://www.bilibili.com/mobile/video/av{$return['aid']}.html#page={$return['pid']}";
 </script>
 HTML;
 	} else {
 		header('HTTP/1.1 302 Moved Temporarily');
 		header('Location: '.$return['url']);
+		echo <<<HTML
+<script>
+history.go(-1);
+</script>
+HTML;
 	}
 } elseif($return['code'] == 3) {
 	header('HTTP/1.1 200 OK');
