@@ -127,7 +127,9 @@ function GetBilibiliUrl($url) {
 			var end = "index_" + params.page + ".html";
 		}
 		window.location="/video/av" + {$aid} + "/" + end + "?type=mobile";
-		setTimeout(history.go(-1),5000); 
+		setTimeout(function(){
+			history.go(-1);
+		},5000)
 		</script>
 	</body>
 </html>
