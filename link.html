@@ -48,9 +48,14 @@ function short() {
 		'url=' + encodeURIComponent($("#setUrl").val()),
 		function(data,status)
 		{
-			$("#result").text("");
-			$("#result").text('https://bilidown.tlo.xyz/link.php/' + data);
-			$("#result2").text('<iframe src="https://bilidown.tlo.xyz/embed.php/' + data + '" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no"></iframe>');
+			if(data == 'ERROR'){
+				alert('不是有效的链接，请重新输入！');
+				$("#result").text("ERROR");
+			} else {
+				$("#result").text("");
+				$("#result").text('https://bilidown.tlo.xyz/link.php/' + data);
+				$("#result2").text('<iframe src="https://bilidown.tlo.xyz/embed.php/' + data + '" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no"></iframe>');
+			}
 		},
 		"text"
 	);

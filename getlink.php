@@ -17,6 +17,6 @@ if( $explode[0] == 'video' ) {
 		echo $aid.'.mp4?page='.$pid;
 	}
 } else {
-	echo '不是有效的链接';
+	echo 'ERROR';
 }
 ?>
