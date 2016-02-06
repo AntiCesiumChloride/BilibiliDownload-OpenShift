@@ -16,7 +16,7 @@ $return = GetUrl(substr($_SERVER['PHP_SELF'],10,-4),$pid,substr($_SERVER['PHP_SE
 if( $return['success'] ) {
 	header('HTTP/1.1 302 Moved Temporarily');
 	header('Location: '.$return['url']);
-} elseif($return['code'] == 3) {
+} else {
 	header('HTTP/1.1 404 Not Found');
 }
 ?>

@@ -38,7 +38,7 @@ if( $return['success'] ) {
 </html>
 
 HTML;
-} elseif($return['code'] == 3) {
+} else {
 	header('HTTP/1.1 404 Not Found');
 	echo <<<HTML
 <!DOCTYPE html>
