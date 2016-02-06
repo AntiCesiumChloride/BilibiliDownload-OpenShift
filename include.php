@@ -51,7 +51,6 @@ function GetUrl($aid, $pid=1, $type='mp4') {
 		];
 		$resp_cid = urlfetch('http://api.bilibili.com/view?'.GetSign($cid_args,APPKEY,APPSEC));
 		$resp_cid = json_decode($resp_cid,true);
-		print_r($resp_cid);
 		$cid = $resp_cid['cid'];
 		$pic = $resp_cid['pic'];
 		apc_store( 'cid-'.$aid.$pid, $cid );
