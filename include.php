@@ -39,7 +39,7 @@ function urlfetch($url) {
 	return $http_data;
 }
 
-function GetUrl($aid, $pid = 1) {
+function GetUrl($aid, $pid=1, $type='mp4') {
 	$url_get_media = 'http://interface.bilibili.com/playurl?';
 	$cid = apc_fetch('cid-'.$aid.$pid);
 	if(!$cid){
@@ -60,7 +60,7 @@ function GetUrl($aid, $pid = 1) {
 		$media_args = [
 			'otype' => 'json',
 			'cid' => $cid,
-			'type' => 'flv',
+			'type' => $type,
 			'quality' => 4,
 		];
 		$appkeyf = [APPKEY,APPKEY2];
@@ -95,7 +95,7 @@ function GetBilibiliUrl($url) {
 			$pid = 1;
 		}
 
-		return GetUrl($aid, $pid);
+		return GetUrl($aid, $pid, 'flv');
 	} elseif( $explode[0] == 'mobile' ){
 		$aid = substr($explode[2],2,-5);
 		echo <<<HTML

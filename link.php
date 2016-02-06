@@ -11,7 +11,7 @@ if( isset($_GET['page']) && $_GET['page'] > 0 ){
 	$pid = 1;
 }
 
-$return = GetUrl(substr($_SERVER['PHP_SELF'],10,-4),$pid);
+$return = GetUrl(substr($_SERVER['PHP_SELF'],10,-4),$pid,substr($_SERVER['PHP_SELF'],-3));
 
 if( $return['success'] ) {
 	header('HTTP/1.1 302 Moved Temporarily');
