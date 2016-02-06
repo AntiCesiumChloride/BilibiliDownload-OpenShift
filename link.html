@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Bilibili MP4 外链生成器</title>
+<meta name="viewport" content="width=device-width" />
+<style type="text/css" media="screen">
+body {
+	background-color: #f1f1f1;
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container { margin: 50px auto 40px auto; text-align: center; max-width: 600px; }
+
+a { color: #4183c4; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1 { position:relative; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
+p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
+
+#more {
+	margin-top: 35px;
+	color: #ccc;
+}
+#more a {
+	color: #666666;
+	font-weight: 200;
+	font-size: 14px;
+	margin: 0 10px;
+}
+</style>
+<script type="text/javascript" charset="utf-8" src="https://cdnjs-com.b0.upaiyun.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<h1>Bilibili MP4 外链生成器</h1>
+<p>直接生成 MP4 外链，可以放在自己的播放器中，利用 HTML5 的 <code>&lt;video&gt;</code> 进行播放，无需 Flash。</p>
+<p>Powered by TLO XYZ</p>
+
+<script>
+function short() {
+	$("#result").text("Loading…");
+	$.get(
+		'/getlink.php',
+		'url=' + encodeURIComponent($("#setUrl").val()),
+		function(data,status)
+		{
+			$("#result").text("");
+			$("#result").text(data);
+		},
+		"text"
+	);
+};
+</script>
+
+<input id="setUrl" type="text" name="url" placeholder="http://www.bilibili.com/video/av12345678/" style="clear: both; font-size: 1.5em; margin: auto; width: 100%; border: 0; background-color: #f1f1f1; border-bottom: 2px solid #a2a2a2; text-align: center; margin-top: 2em;" onchange="short()">
+
+<textarea style="font-size: 150%; width: 100%; height: 2.5em; clear: both; margin: auto; border: 0; background-color: #f1f1f1; text-align: center; resize: none !important;" id="result"></textarea>
+
+<div id="more">
+	<a href="https://tlo.xyz/bilibilidownload/">About this service</a>
+</div>
+</body>
+</html>
