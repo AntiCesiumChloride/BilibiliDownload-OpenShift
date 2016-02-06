@@ -11,7 +11,7 @@ if( $explode[0] == 'video' ) {
 	} else {
 		$pid = 1;
 	}
-	if( $pid = 1 ) {
+	if( $pid == 1 ) {
 		echo 'https://bilidown.tlo.xyz/link.php/'.$aid.'.mp4';
 	} else {
 		echo 'https://bilidown.tlo.xyz/link.php/'.$aid.'.mp4?page='.$pid;
