@@ -89,8 +89,8 @@ function GetBilibiliUrl($url) {
 	$explode = explode('/',substr(strstr($url,'http://www.bilibili.com/'),24));
 	if( $explode[0] == 'video' ) {
 		$aid = substr($explode[1],2);
-		if( substr($explode[3],6,-5)>0 ) {
-			$pid = substr($explode[3],6,-5);
+		if( substr($explode[2],6,-5)>0 ) {
+			$pid = substr($explode[2],6,-5);
 		} else {
 			$pid = 1;
 		}
