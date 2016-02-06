@@ -12,9 +12,9 @@ if( $explode[0] == 'video' ) {
 		$pid = 1;
 	}
 	if( $pid == 1 ) {
-		echo 'https://bilidown.tlo.xyz/link.php/'.$aid.'.mp4';
+		echo $aid.'.mp4';
 	} else {
-		echo 'https://bilidown.tlo.xyz/link.php/'.$aid.'.mp4?page='.$pid;
+		echo $aid.'.mp4?page='.$pid;
 	}
 } else {
 	echo '不是有效的链接';
