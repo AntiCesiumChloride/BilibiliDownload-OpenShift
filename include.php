@@ -60,7 +60,7 @@ function GetUrl($aid, $pid = 1) {
 		$media_args = [
 			'otype' => 'json',
 			'cid' => $cid,
-			'type' => 'mp4',
+			'type' => 'flv',
 			'quality' => 4,
 		];
 		$appkeyf = [APPKEY,APPKEY2];
