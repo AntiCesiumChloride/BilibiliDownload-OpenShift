@@ -42,6 +42,7 @@ function urlfetch($url) {
 function GetUrl($aid, $pid=1, $type='mp4') {
 	$url_get_media = 'http://interface.bilibili.com/playurl?';
 	$cid = apc_fetch('cid-'.$aid.$pid);
+	$pic = apc_fetch('pic-'.$aid.$pid);
 	if(!$cid){
 		$cid_args = [
 			'type' => 'json',
@@ -50,8 +51,11 @@ function GetUrl($aid, $pid=1, $type='mp4') {
 		];
 		$resp_cid = urlfetch('http://api.bilibili.com/view?'.GetSign($cid_args,APPKEY,APPSEC));
 		$resp_cid = json_decode($resp_cid,true);
+		print_r($resp_cid);
 		$cid = $resp_cid['cid'];
+		$pic = $resp_cid['pic'];
 		apc_store( 'cid-'.$aid.$pid, $cid );
+		apc_store( 'pic-'.$aid.$pid, $pic );
 	}
 	$url = apc_fetch('url-'.$cid);
 	if($url){
@@ -72,6 +76,7 @@ function GetUrl($aid, $pid=1, $type='mp4') {
 		return [
 			'success' => true,
 			'url' => $resp_media['durl'][0]['url'],
+			'pic' => $pic,
 			'aid' => $aid,
 			'pid' => $pid
 		];
