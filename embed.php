@@ -32,7 +32,7 @@ if( $return['success'] ) {
 	<script type="text/javascript" charset="utf-8" src="//cdnjs-com.b0.upaiyun.com/ajax/libs/video.js/5.7.0/video.min.js" async="async"></script>
 </head>
 <body>
-	<video id="video" class="video-js vjs-big-play-centered" controls preload="auto" data-setup="{}" poster="{$return['pic']}"><source src="{$return['url']}" type="video/{$type}"></video>
+	<video id="video" class="video-js vjs-big-play-centered" controls preload="auto" data-setup="{}" poster="{$return['pic']}"><source src="{$return['url']}" type="video/{$type}" style="width:100vw;height:100vh;"></video>
 
 </body>
 </html>
