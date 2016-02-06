@@ -24,7 +24,7 @@ if( $return['success'] ) {
 	<title>Video</title>
 	<style>
 	* { margin: 0; }
-	video,.video-js { width: 100vw; height: 100vh; position: absolute; top:0; left: 0; }
+	video,.video-js { width: 100%; height: 100%; position: absolute; top:0; left: 0; }
 	</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 	<link href="//cdnjs-com.b0.upaiyun.com/ajax/libs/video.js/5.7.0/video-js.min.css" rel="stylesheet">
