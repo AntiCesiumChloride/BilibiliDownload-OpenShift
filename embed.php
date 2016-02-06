@@ -24,7 +24,7 @@ if( $return['success'] ) {
 	<title>Video</title>
 	<style>
 	* { margin: 0; }
-	video,.video-js { width: 100%; height: 100%; position: absolute; top:0; left: 0; }
+	video,.video-js { width: 100vw; height: 100vh; position: absolute; top:0; left: 0; }
 	</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 	<link href="//cdnjs-com.b0.upaiyun.com/ajax/libs/video.js/5.7.0/video-js.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@ if( $return['success'] ) {
 	<script type="text/javascript" charset="utf-8" src="//cdnjs-com.b0.upaiyun.com/ajax/libs/video.js/5.7.0/video.min.js" async="async"></script>
 </head>
 <body>
-	<video id="video" class="video-js vjs-big-play-centered" controls preload="auto" data-setup="{}" poster="{$return['pic']}"><source src="{$return['url']}" type="video/{$type}" style="width:100vw;height:100vh;"></video>
+	<video id="video" class="video-js vjs-big-play-centered" controls preload="auto" data-setup="{}" poster="{$return['pic']}"><source src="{$return['url']}" type="video/{$type}"></video>
 
 </body>
 </html>
