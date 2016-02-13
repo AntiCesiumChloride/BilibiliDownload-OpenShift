@@ -25,6 +25,7 @@ function urlfetch($url) {
 	$req_headers = [
 		'Accept-Encoding: gzip',
 		'Client-IP: '.$ip,
+		'X-Forwarded-For: '.$ip,
 	];
 	$ch = curl_init() ;
 	curl_setopt( $ch , CURLOPT_URL , $url ) ;
